@@ -104,10 +104,10 @@ console.log("hello")
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
+      <form onSubmit={handleSubmit} className="space-y-8">
+        <div className="grid grid-cols-2 gap-5 gap-y-8">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               الاسم الكامل
             </label>
             <input
@@ -115,13 +115,13 @@ console.log("hello")
               name="user.name"
               value={formData.user.name}
               onChange={handleInputChange}
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               البريد الإلكتروني
             </label>
             <input
@@ -129,13 +129,13 @@ console.log("hello")
               name="user.email"
               value={formData.user.email}
               onChange={handleInputChange}
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               كلمة المرور
             </label>
             <input
@@ -143,13 +143,13 @@ console.log("hello")
               name="user.password"
               value={formData.user.password}
               onChange={handleInputChange}
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required={!student}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               تأكيد كلمة المرور{" "}
             </label>
             <input
@@ -157,13 +157,13 @@ console.log("hello")
               name="user.confirmPassword"
               value={formData.user.confirmPassword}
               onChange={handleInputChange}
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required={!student}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               رقم الهاتف
             </label>
             <input
@@ -173,7 +173,7 @@ console.log("hello")
               onChange={handleInputChange}
               pattern="^01[0-2,5]{1}[0-9]{8}$"
               placeholder="01xxxxxxxxx"
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
             {formData.user.phone && !validatePhone(formData.user.phone) && (
@@ -182,7 +182,7 @@ console.log("hello")
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               الرقم القومي
             </label>
             <input
@@ -193,13 +193,13 @@ console.log("hello")
               pattern="[0-9]{14}"
               maxLength={14}
               placeholder="14 رقم"
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               رقم جلوس
             </label>
             <input
@@ -210,13 +210,13 @@ console.log("hello")
               pattern="[0-9]{5}"
               maxLength={5}
               placeholder="5 أرقام"
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               تاريخ التسجيل
             </label>
             <input
@@ -224,20 +224,20 @@ console.log("hello")
               name="enrollmentDate"
               value={formData.enrollmentDate}
               onChange={handleInputChange}
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               الفرقة الدراسية
             </label>
             <select
               name="studentLevel"
               value={formData.studentLevel}
               onChange={handleInputChange}
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             >
               <option value="الاول">الأول</option>
@@ -248,7 +248,7 @@ console.log("hello")
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               المعدل التراكمي (GPA)
             </label>
             <input
@@ -259,13 +259,13 @@ console.log("hello")
               name="gpa"
               value={formData.gpa}
               onChange={handleInputChange}
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               مجموع الدرجات
             </label>
             <input
@@ -275,13 +275,13 @@ console.log("hello")
               name="totalGrades"
               value={formData.totalGrades}
               onChange={handleInputChange}
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               رقم هاتف ولي الأمر
             </label>
             <input
@@ -292,7 +292,7 @@ console.log("hello")
               pattern="[0-9]{11}"
               maxLength={11}
               placeholder="11 رقم"
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
             {formData.parentPhone &&
@@ -302,7 +302,7 @@ console.log("hello")
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               مجموعة الإرشاد
             </label>
             <input
@@ -310,13 +310,13 @@ console.log("hello")
               name="guidanceGroupID"
               value={formData.guidanceGroupID}
               onChange={handleInputChange}
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
           <div className="col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               العنوان
             </label>
             <input
@@ -324,13 +324,13 @@ console.log("hello")
               name="address"
               value={formData.address}
               onChange={handleInputChange}
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
           <div className="col-span-2">
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
               ملاحظات
             </label>
             <textarea
@@ -338,7 +338,7 @@ console.log("hello")
               value={formData.notes}
               onChange={handleInputChange}
               rows={3}
-              className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="text-black dark:text-white w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
         </div>
@@ -347,14 +347,14 @@ console.log("hello")
           <button
             type="submit"
             disabled={loading}
-            className="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-indigo-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "جاري الحفظ..." : student ? "تحديث" : "حفظ"}
           </button>
           <button
             type="button"
             onClick={onCancel}
-            className="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-md font-semibold hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="flex-1 bg-gray-300 text-gray-700 dark:text-white py-2 px-4 rounded-md font-semibold hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
           >
             إلغاء
           </button>

@@ -1,13 +1,18 @@
-import { apiUrl } from "./types";
+import { apiUrl, ImportResponse } from "./types";
 
-export async function addStudentsUsingFile(file: File): Promise<string> {
+export async function addStudentsUsingFile(file: File): Promise<ImportResponse> {
   const formData = new FormData();
   formData.append("file", file);
   const res = await fetch(`${apiUrl}/Students/upload`, {
     method: "POST",
     body: formData,
   });
-  const text = await res.text();
-  if (!res.ok) throw new Error(text || "Failed to upload students file");
-  return text;
+
+  if (!res.ok) {
+    const errorText = await res.text();
+    throw new Error(errorText || "Failed to upload students file");
+  }
+
+  const result: ImportResponse = await res.json();
+  return result;
 }

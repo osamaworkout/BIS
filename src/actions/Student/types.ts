@@ -53,3 +53,17 @@ export interface StudentPayload {
 
 export const apiUrl =
   process.env.NEXT_PUBLIC_API_URL || "https://bis.runasp.net/api";
+
+export interface ImportError {
+  rowNumber: number;
+  studentName: string;
+  errorMessage: string;
+}
+
+export interface ImportResponse {
+  totalRows: number;
+  successCount: number;
+  failedCount: number;
+  skippedCount: number;
+  errors: ImportError[];
+}

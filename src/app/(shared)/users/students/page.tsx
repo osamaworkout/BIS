@@ -171,7 +171,7 @@ export default function StudentsPage() {
     const query = searchQuery.toLowerCase();
     return (
       student.user.name.toLowerCase().includes(query) ||
-      student.studentID.toString().includes(query) ||
+      student.sittingNumber.toString().includes(query) ||
       student.user.email.toLowerCase().includes(query)
     );
   });
@@ -296,7 +296,7 @@ export default function StudentsPage() {
             <thead className="bg-gray-50 dark:bg-gray-700">
               <tr>
                 <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                  الرقم الجامعي
+                  رقم الجلوس
                 </th>
                 <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   الاسم
@@ -320,7 +320,7 @@ export default function StudentsPage() {
                   className="hover:bg-gray-50 dark:hover:bg-gray-700 transition duration-150"
                 >
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                    {student.studentID}
+                    {student.sittingNumber}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
                     {student.user.name}
@@ -336,15 +336,23 @@ export default function StudentsPage() {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
                     <button
+                      onClick={() =>
+                        window.location.href = `/users/students/${student.studentID}/attendance?level=${student.studentLevel}`
+                      }
+                      className="text-green-600 cursor-pointer dark:text-green-400 hover:text-green-900 dark:hover:text-green-300"
+                    >
+                      الغياب
+                    </button>
+                    <button
                       onClick={() => handleEditStudent(student)}
-                      className="text-indigo-600 cursor-pointer dark:text-indigo-400 hover:text-indigo-900 dark:hover:text-indigo-300 ml-3"
+                      className="text-indigo-600 cursor-pointer dark:text-indigo-400 hover:text-indigo-900 dark:hover:text-indigo-300 w-[100px]"
                     >
                       تعديل
                     </button>
                     <button
                       onClick={() => openDeleteModal(student.studentID)}
                       disabled={deletingId === student.studentID}
-                      className={`text-red-600 cursor-pointer w-[130px] dark:text-red-400 hover:text-red-900 dark:hover:text-red-300 ${
+                      className={`text-red-600 cursor-pointer dark:text-red-400 hover:text-red-900 dark:hover:text-red-300 ml-3 ${
                         deletingId === student.studentID
                           ? "opacity-50 cursor-not-allowed"
                           : ""
@@ -387,15 +395,6 @@ export default function StudentsPage() {
                         </div>
                       </div>
                     )}
-
-                    <button
-                      onClick={() =>
-                        window.location.href = `/users/students/${student.studentID}/attendance?level=${student.studentLevel}`
-                      }
-                      className="text-green-600 cursor-pointer dark:text-green-400 hover:text-green-900 dark:hover:text-green-300 mr-3"
-                    >
-                      الغياب
-                    </button>
                   </td>
                 </tr>
               ))}

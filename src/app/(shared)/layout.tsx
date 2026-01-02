@@ -12,6 +12,7 @@ import {
   Menu,
   X,
   Calendar,
+  ClipboardList,
 } from "lucide-react";
 import React, { useState, useEffect, useContext } from "react";
 import { usePathname } from "next/navigation";
@@ -76,6 +77,11 @@ export default function SharedDashboardLayout({
             ],
           },
           { href: "/schedule", label: "الجدول الدراسي", icon: Calendar },
+          {
+            href: "/attendance-management",
+            label: "إدارة الغياب",
+            icon: ClipboardList,
+          },
           { href: "/settings", label: "الإعدادات", icon: Settings },
         ]),
   ];
